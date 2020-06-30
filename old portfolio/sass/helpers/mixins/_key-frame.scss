@@ -1,0 +1,191 @@
+// universa Mixins for animation because we might need to add 
+//sometime just one or two simple animation..
+
+@mixin animation($animation, $duration, $delay){  
+	-webkit-animation-name: $animation;				
+	-moz-animation-name: $animation;
+	-o-animation-name: $animation;
+	animation-name: $animation;					//Always write the orginal property at first
+	animation-duration: $duration;				
+	animation-delay: $delay;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}
+
+@mixin keyframes ($name){
+	@-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}                  
+                    
+                    //******* Common Animations on whole site **********
+
+//==========For moveInRight Animation=====================
+
+@mixin moveInRight{
+	-webkit-animation-name:moveInRight;
+	-moz-animation-name:moveInRight;
+	-o-animation-name:moveInRight;
+	animation-name:moveInRight;
+	animation-duration: 0.9s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}
+						
+@-webkit-keyframes moveInRight{					    //--webkit 
+    0%{
+        @include transform(translateX(-100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+}
+
+@-moz-keyframes moveInRight{						//---moz
+  0%{
+        @include transform(translateX(-100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+} //moz
+
+@keyframes moveInRight{							  //--All
+ 	0%{
+        @include transform(translateX(-100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+}
+
+//==========For moveInLeft Animation=====================
+
+@mixin moveInLeft{
+    -webkit-animation-name:moveInLeft;
+    -moz-animation-name:moveInLeft;
+    -o-animation-name:moveInLeft;
+    animation-name:moveInLeft;
+    animation-duration: 0.8s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}
+                        
+@-webkit-keyframes moveInLeft{                     //--webkit 
+    0%{
+        @include transform(translateX(100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(-10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+}
+
+@-moz-keyframes moveInLeft{                        //---moz
+  0%{
+        @include transform(translateX(100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(-10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+} 
+
+@keyframes moveInLeft{                           //--All
+    0%{
+        @include transform(translateX(100px));
+        opacity: 0;
+    }
+
+    80%{
+        @include transform(translateX(-10px));                   
+    }
+
+    100%{
+        @include transform(translateX(0px));
+    }
+}
+
+//==========For moveUpward Animation=====================
+
+@mixin moveUpward{
+    -webkit-animation-name:moveUpward;
+    -moz-animation-name:moveUpward;
+    -o-animation-name:moveUpward;
+    animation-name:moveUpward;
+    animation-duration: 0.6s;
+    animation-delay: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;              //It will activate the animation before 0%..
+}
+                        
+@-webkit-keyframes moveUpward{                     //--webkit 
+    0%{
+        // @include transform(translateY(100px));
+        opacity: 0;
+    }
+
+    100%{
+        @include transform(translateY(0px));
+    }
+}
+
+@-moz-keyframes moveUpward{                        //---moz
+  0%{
+        @include transform(translateY(100px));
+        opacity: 0;
+    }
+
+    100%{
+        @include transform(translateY(0px));
+    }
+} 
+
+@keyframes moveUpward{                           //--All
+    0%{
+        @include transform(translateY(100px));
+        opacity: 0;
+    }
+
+    100%{
+        @include transform(translateY(0px));
+    }
+}

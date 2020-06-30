@@ -1,0 +1,216 @@
+.my-work{
+	overflow: scroll;
+	
+	.site{
+			
+		.background-wrapper{
+			align-items: unset;
+			justify-content: unset;
+			flex-direction: unset;
+			display: block;
+
+			.site-header{
+				margin-bottom: 0;
+				width: 0;
+			}
+
+			.portfolio{
+				padding-top: 14%;
+
+				h2{
+					color: color(primary);
+					position: relative;
+					font-size: 2.111em;
+					line-height: 2.211em;
+					text-transform: uppercase;
+					letter-spacing: 4px;
+					margin-bottom: 74px;
+
+					&:after{
+						width: 80px;
+						height: 2px;
+						background: color(secondary);
+						content: '';
+						position: absolute;
+						top: 76px;
+						left: 0;
+						@include moveInRight;
+					}
+
+				}//work-title
+
+				.portfolio-list{
+					margin-bottom: margin(medium);
+
+					ul{
+						margin: 0;
+						padding: 0;
+						list-style: none;
+						display: flex;
+						justify-content: space-between;
+						font-size: 2em;
+						line-height: 2.11em;
+						font-family: font(secondary);
+						@include media(md){
+							font-size: 1.34em;
+							line-height: 1.38em;
+						}
+						@include media(xs){
+							font-size: 1em;
+							line-height: 1.10em;
+						}
+						@include media(mb){
+							font-size: 0.86em;
+							line-height: 1em;
+						}
+
+						li{
+
+							@include moveInRight;
+
+							&:nth-child(1){
+								animation-delay: 0.2s;
+							}
+							&:nth-child(2){
+								animation-delay: 0.4s;
+							}
+							&:nth-child(3){
+								animation-delay: 0.6s;
+							}
+							&:nth-child(4){
+								animation-delay: 0.7s;
+							}
+							
+							a{
+								padding: 8px 56px;
+								@include media(sm){
+									padding: 8px 40px;
+								}
+								@include media(xs){
+									padding: 6px 10px;
+								}
+								background: color(secondary);
+								@include border-radius(40px);
+								@include transition(ease 0.4s);
+
+								&:hover,
+								&:focus{
+									color: color(secondary);
+									background: color(primary);
+								}
+							}
+		
+						}//li
+					
+					}//ul
+
+				}//portfolio-list
+
+			}//portfolio
+
+			.grid{
+				display: grid;
+				grid-gap: 20px;
+				padding: 20px;
+				padding-bottom: 0;
+				background-color: color(primary);
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(2, 20vw);
+				@include media(sm){
+					grid-template-columns: repeat(2, 1fr);
+				}
+				@include media(xs){
+					grid-template-columns: repeat(1, 1fr);
+				}
+				
+				.grid-items{
+					
+					.img-holder{
+						width: 100%;
+						height: 100%;
+						display: block;
+						object-fit: cover;
+						position: relative;
+
+						a{
+						 	overflow: hidden;
+							 
+							 img{
+							    vertical-align: top;
+								width: 100%;
+								height: 100%;
+								display: block;
+							    @include transition_g;
+							    object-fit: cover;
+							}
+							
+							&:hover{
+								transform: scale(1);
+    							filter: brightness(60%) blur(2px);
+							}
+
+						}//a
+
+						&:after{
+							position: absolute;
+							top: 0%;
+							left: 0%;
+							width: 100%;
+							height: 100%;
+							background: rgba(0, 0, 0, 0.6);
+							content: '';
+							transition: ease 0.4s;
+							display: none;
+						}
+
+						.btn-holder{
+							@include transform_center;
+							position: absolute;
+							visibility: hidden;
+							text-align: center;
+						
+
+							.demo-btn{
+								font-size: 2em;
+								font-size: 2.36em;
+								font-weight: 600;
+								display: block;
+								color: color(secondary);
+							}
+
+							.demo{
+								font-size: 1.68em;
+								line-height: 2em;
+								letter-spacing: 1px;
+								font-weight: 600;
+								color: color(secondary);
+							}
+
+						}//btn-holder
+
+						&:hover .btn-holder{
+							visibility: visible;
+						}
+
+					}//img-holder
+						
+				}//items 
+				
+				.i-4{
+					grid-row: 1/span2;
+				}
+
+				.i-6{
+					grid-column: 2/-1;
+					@include media(xs){
+						grid-column: 1;
+					}
+				}
+
+			}//grid
+
+		}//background-wrapper
+
+	}//site
+
+}//work

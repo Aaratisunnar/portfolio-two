@@ -1,0 +1,132 @@
+.about{
+	
+	.site{
+			
+		.site-header{
+			margin-bottom: 0;
+		}//site-header
+	
+		.about-me{
+
+			.row{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 0 10px;
+				align-items: center;
+				@include media(sm){
+					grid-gap: 0 60px;
+				}
+
+				@include media(xs){
+					grid-template-columns: repeat(1, 1fr);
+					grid-gap: 0;
+					margin-top: 40%;
+				}
+
+				.img-holder{
+						align-self: center;
+						text-align: center;
+
+						img{
+							width: 300px;
+							opacity: 0.7;
+							vertical-align: top;
+							position: relative;
+							transform: scale(1.1);
+							@include media(sm){
+								transform: unset;
+								width: 250px;
+							}
+						}//img-holder
+
+						&:after{
+							content: '';
+							position: absolute;
+							border: 4px solid color(secondary);
+							width: 390px;
+							height: 550px;
+							@include transform(translate(-348px, -50px));
+							@include animation(moveBorder, 0.6s, 0.9s);
+							@include keyframes(moveBorder){
+								0%{
+									opacity: 0;
+								}
+
+								80%{
+									opacity: 0.6;
+								}
+
+								100%{
+									opacity: 1;	
+								}
+							}
+
+							@include media(sm){
+								width: 300px;
+								height: 417px;
+								@include transform(translate(-280px, -26px));
+							}
+						}
+
+				}//img-holder
+
+				.text-holder{
+					color: #fff;
+					align-self: center;
+					text-align: left;
+					@include media(xs){
+						margin-top: 60px;
+						text-align: center;
+					}
+					
+					h2{
+						font-size: 2.111em;
+						line-height: 2.211em;
+						position: relative;
+						@include media(sm){
+							font-size: 1.8em;
+							line-height: 1.99em;
+						}
+						@include moveInLeft;
+
+						&:after{
+							content: '';
+							background: color(secondary);
+							position: absolute;
+							top: 74px;
+							left: 0;
+							width: 100px;
+							height: 2px;
+							@include media(sm){
+								top: 66px;
+							}
+
+							@include media(xs){
+								left: 122px;
+							}
+					
+						}//h2:after
+
+					}//h2
+
+					p{
+						font-size: 1.60em;
+						line-height: 1.66em;
+						font-family: font(primary);
+						@include media(sm){
+							font-size: 1.23em;
+							line-height: 1.6em;
+						}
+						@include moveUpward;
+
+					}//p
+
+				}//text-holder
+
+			}//row
+
+		}//about-me
+		
+	}//site
+
+}//.about-page

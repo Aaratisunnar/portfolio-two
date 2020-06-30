@@ -1,0 +1,11 @@
+@function color($color-name){
+	@return map-get($colors, $color-name)
+}
+
+@function font($font-name){
+	@return map-get($font, $font-name)
+}
+
+@function margin($margin){
+	@return map-get($margin-bottom, $margin)
+}

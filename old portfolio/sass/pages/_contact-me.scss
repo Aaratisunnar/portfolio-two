@@ -1,0 +1,125 @@
+.contact-me{
+	
+	.site{
+
+		.contact{
+			padding-top: 10%;
+			@include media(sm){
+				padding-top: 20%;
+			}
+
+			.text-holder{
+				margin-bottom: 60px;
+				@include media(mb){
+					text-align: center;
+				}
+
+				.title{
+					color: #fff;
+					position: relative;
+					font-size: 2.111em;
+					line-height: 2.211em;
+					text-transform: uppercase;
+					letter-spacing: 4px;
+					margin-bottom: 28px;
+
+					&:after{
+						width: 80px;
+						height: 2px;
+						background: #08A6E4;
+						content: '';
+						position: absolute;
+						top: 76px;
+						left: 0%;
+						@include media(mb){
+							left: 38%;
+						}
+						@include moveInRight;
+						animation-delay: 0.3s;
+					}//after
+
+				}//title
+
+				p{
+					color: color(primary);
+					font-size: 1.16em;
+					line-height: 1.32em;
+				}
+
+			}//text-holder
+
+			.contact-form{
+				display: flex;
+				flex-wrap: wrap;
+				@include media(xs){
+					justify-content: center;
+				}
+
+				label{
+					margin: 0 32px 18px 0;
+
+					input{
+						width: 380px;
+						padding: 14px 20px;
+						@include border-radius(10px);
+						border: 2px solid color(secondary);
+						font-size: 1em;
+						line-height: 1.14em;
+						color: #000;
+						@include media(mb){
+							width: 285px;
+						}
+					}
+
+					.text{
+						width: 700px;
+						padding: 0 20px 80px 20px;
+						height: 150px;
+						@include media(xs){
+							height: 100px;
+							padding: 0 10px 40px 10px;
+							width: 380px;
+						}
+
+						@include media(mb){
+							padding-bottom: 20px;
+							width: 280px;
+						}
+					}
+
+					.submit{
+						background: color(secondary);
+						cursor: pointer;
+						color: color(primary);
+					}
+
+				}//label
+
+				.i-1{
+					@include moveInRight;
+					animation-delay: 0.2s;
+				}
+
+				.i-2{
+					@include moveInLeft;
+					animation-delay: 0.3s;
+				}
+
+				.i-3{
+					animation-delay: 0.4s;
+					@include moveInRight;
+				}
+
+				.i-4{
+					animation-delay: 0.5s;
+					@include moveInLeft;
+					cursor: pointer;
+				}
+
+			}//fomr
+
+		}//contact
+
+	}//site
+
+}//contact

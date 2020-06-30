@@ -1,0 +1,45 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.125em;
+	font-family: 'Roboto Mono', monospace;
+	color: color(font-color);
+	overflow: hidden;
+	@include media(xs){
+		overflow: scroll;
+	}
+}
+
+a{
+  text-decoration: none;
+  color: color(primary);
+	
+  &:hover,&:focus{
+	color: color(secondary);
+	@include transition(ease 0.2s);
+	}//hover
+
+}//anchor
+
+img{
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin-top: 0;
+}
+
+p{
+	margin-top: 0;
+}

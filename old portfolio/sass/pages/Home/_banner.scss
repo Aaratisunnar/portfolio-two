@@ -1,0 +1,65 @@
+.banner{
+
+	.text-holder{
+		margin-bottom: 46px;
+		text-align: center;
+		@include moveInLeft;
+
+		.site-title{
+			font-size: 5.5rem;
+			font-family: font(primary);
+			color: color(primary);
+			font-weight: 300;
+			margin-bottom: margin(medium);
+			@include media(xs){
+				font-size: 3.6rem;
+				line-height: 2.8rem;
+			}
+
+			span{
+				color: color(secondary);
+			}
+
+		}//site-title
+
+		.site-description{
+			font-size: 1.5rem;
+			color: #fff;
+			padding: 12px 50px 12px 50px;
+			background: rgba(73, 73, 73, 0.5);
+			display: inline-block;
+			margin: 0;
+			@include media(xs){
+				font-size: 1.2rem;
+			}
+
+		}//site-description
+
+	}//text-holder
+
+	.social-nav{
+		@include moveUpward;
+		
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			
+			li{
+				margin-right: 32px;
+
+				&:last-child{
+					margin-right: 0;
+				}
+
+			}//li
+
+		}//ul
+
+	}//nav
+
+}//banner

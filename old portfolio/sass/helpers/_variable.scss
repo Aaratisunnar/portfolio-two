@@ -1,0 +1,19 @@
+$colors:(
+	primary: #fff,
+	primary-light: lighten(#fff, 60%),
+	primary-dark: darken(#fff, 80%),
+	secondary: #08A6E4,
+	font-color: #000,
+	bg-color: #444,
+);
+
+$font:(
+	primary: "'Roboto Mono', monospace",
+	secondary: "Nunito', sans-serif'",	
+);
+
+$margin-bottom:(
+	small: 20px,
+	medium: 68px,
+	large: 80px,
+);

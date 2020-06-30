@@ -1,0 +1,73 @@
+/*======================
+Common style
+======================*/
+.site{
+	background: #000;
+}
+
+.container{						//container width above width: 1200px
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.container:after{
+	content: '';
+	clear: both;
+	display:block;
+}
+
+@include media(md){					//container width at max-width: 1200px
+	.container{
+		max-width: 970px;
+	}
+}
+
+@include media(sm){					//container width at max-width: 1024px
+	.container{
+		max-width: 750px;			
+	}
+}
+
+@include media(xs){					//container width at max-width: 767px
+	.container{
+		max-width: 384px;
+	}
+}
+
+@include media(mb){					//container width at max-width: 450px
+	.container{
+		max-width: 100%;
+	}
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.background-wrapper{
+	background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.86)), url(images/img3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	display:none;
+}
+.open-menu .overlay{
+	display:block;
+}
+
+
